@@ -1,9 +1,13 @@
 FROM debian:bookworm
 
+ENV DEBIAN_FRONTEND noninteractive
+
 #Install kismet
 COPY sources.list /etc/apt/
 RUN \
 	rm /etc/apt/sources.list.d/debian.sources; \
+	\
+	\
 	apt update && \
 	apt install -y firmware-misc-nonfree wget gnupg2 usbutils wireless-tools iproute2 kmod vim
 
