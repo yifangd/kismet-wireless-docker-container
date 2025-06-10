@@ -18,7 +18,7 @@ RUN \
 
 RUN \
 	wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null; \
-	echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/kali kali main' | tee /etc/apt/sources.list.d/kismet.list >/dev/null; \
+	echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/bookworm bookworm main' | tee /etc/apt/sources.list.d/kismet.list >/dev/null; \
 	apt update && apt install -y kismet gpsd
 
 EXPOSE 2501
